@@ -1,0 +1,27 @@
+VisualHostKey yes
+
+Host thin-man
+     User morrifeldman
+     HostName 132.77.90.145
+
+Host old-school
+     User morrifeldman
+     HostName 192.168.56.102
+
+Host old-school-remote
+     User morrifeldman
+     Port 2020
+     HostName localhost
+
+Host old-school-wire
+     User morrifeldman
+     Port 2025
+     HostName localhost
+
+Host amazon
+     User admin
+     HostName 54.225.104.129
+
+Host raspi
+     User pi
+     HostName morri.ssh22.net

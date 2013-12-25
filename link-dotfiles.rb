@@ -14,17 +14,22 @@ dotfiles_map = {
   "rake" => "~/.rake",
   "profiles.clj" => "~/.lein/profiles.clj",
   "tmux.conf" => "~/.tmux.conf",
-  "gitconfig" => "~/.gitconfig"}
+  "gitconfig" => "~/.gitconfig",
+  "ssh_config" => "~/.ssh/config"
+}
 
 backup_dir = File.expand_path("~/backup_dotfiles")
 dirs_to_make = [backup_dir,
-                File.expand_path("~/.lein")]
+                File.expand_path("~/.lein"),
+                File.expand_path("~/.ssh")]
 
 dirs_to_make.each do |d|
   Dir.mkdir(d) unless File.exists?(d)
 end
 
-`git clone https://github.com/bbatsov/prelude.git #{prelude_dir}` unless File.exists? prelude_dir
+unless File.exists? prelude_dir
+  `git clone https://github.com/bbatsov/prelude.git #{prelude_dir}`
+end
 
 dotfiles_map.each do |orig, link|
   abs_orig = File.expand_path(orig)
