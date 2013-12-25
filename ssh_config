@@ -1,9 +1,5 @@
 VisualHostKey yes
 
-Host thin-man
-     User morrifeldman
-     HostName 132.77.90.145
-
 Host old-school
      User morrifeldman
      HostName 192.168.56.102
@@ -13,10 +9,9 @@ Host old-school-remote
      Port 2020
      HostName localhost
 
-Host old-school-wire
-     User morrifeldman
-     Port 2025
-     HostName localhost
+Host morri-mac
+     User morri
+     HostName morri.mac.ssh22.net
 
 Host amazon
      User admin
