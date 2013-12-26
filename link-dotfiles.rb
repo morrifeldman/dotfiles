@@ -4,7 +4,6 @@ require 'fileutils'
 prelude_dir = File.expand_path("~/prelude")
 
 dotfiles_map = {
-  "profile" => "~/.profile",
   "bash_profile.bash" => "~/.bash_profile",
   "bashrc.bash" => "~/.bashrc",
   prelude_dir => "~/.emacs.d",
@@ -12,7 +11,6 @@ dotfiles_map = {
   "prelude-modules.el" => File.join(prelude_dir, "prelude-modules.el"),
   "bin" => "~/bin",
   "rake" => "~/.rake",
-  "profiles.clj" => "~/.lein/profiles.clj",
   "tmux.conf" => "~/.tmux.conf",
   "gitconfig" => "~/.gitconfig",
   "ssh_config" => "~/.ssh/config"
@@ -20,7 +18,6 @@ dotfiles_map = {
 
 backup_dir = File.expand_path("~/backup_dotfiles")
 dirs_to_make = [backup_dir,
-                File.expand_path("~/.lein"),
                 File.expand_path("~/.ssh")]
 
 dirs_to_make.each do |d|

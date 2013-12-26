@@ -19,7 +19,6 @@ Host amazon
 
 Host raspi
      User pi
-     port 2022
      HostName morri.ssh22.net
 
 Host raspi-local

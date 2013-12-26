@@ -22,6 +22,9 @@
 ;; (setq ido-virtual-buffers '()) ; run these to reset the virtual-buffers
 ;; (setq recentf-list '())
 
+;; So we can conect without specifying the port
+(setq nrepl-port "4567")
+
 ;; Provide M-x slamhound to fix a namespace
 (prelude-require-package 'slamhound)
 
