@@ -15,7 +15,7 @@ Host morri-mac
 
 Host amazon
      User admin
-     HostName 54.225.104.129
+     HostName 54.228.211.215
 
 Host raspi
      User pi
