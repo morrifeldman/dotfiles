@@ -14,7 +14,7 @@ Host morri-mac
      HostName morrimac.ssh22.net
 
 Host amazon
-     User admin
+     User ubuntu
      HostName 54.228.211.215
 
 Host raspi

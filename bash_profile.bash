@@ -46,6 +46,6 @@ PS1="\w\[\033[0;32m\]\$(parse_git_branch_and_add_brackets)\[\033[0m\]\$ "
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+[[ -s "$HOME/.local_bash_profile" ]] && source "$HOME/.local_bash_profile"
 
 [[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
