@@ -10,7 +10,6 @@ rubyScriptDir=$backed_up_dir/rubyScripts
 export RUBYLIB=$rubyScriptDir:$rubyScriptDir/lib:/Volumes/Spin/BigFiles/tc-subseq
 export PATH=$PATH:$RUBYLIB:~/bin:$backed_up_dir/bin/IGVTools
 export PATH=$PATH:$backed_up_dir/apt-1.15.0-x86_64-apple-lion/bin
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH # brew wants first bat
 PATH=/usr/texbin:$PATH
 Spin=/Volumes/Spin
 Affy=$Spin/BigFiles/Affy
@@ -32,13 +31,13 @@ function file-to-clip-function {
     greadlink -f $1 | perl -ne 'chomp and print' | pbcopy
 }
 alias file2clip=file-to-clip-function
-export HOMEBREW_EDITOR="emacsclient -c -n -a ''"
 if hash brew 2>/dev/null
 then
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH # brew wants first bat
+    export HOMEBREW_EDITOR="emacsclient -c -n -a ''"
     source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+    LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN
 fi
-
-LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN
 function parse_git_branch_and_add_brackets {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
 }
