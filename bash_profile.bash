@@ -2,6 +2,8 @@
 #export MYSQLLIBS="/usr/local/mysql/lib/libmysqlclient.a -lz"
 #export MYSQLINC=/usr/local/mysql/include
 #export MACHTYPE=x86_64
+[[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
+
 backed_up_dir=~/Google\ Drive
 export CLICOLOR=true
 export R_HOME=/usr/local/opt/r/R.framework/Resources
@@ -46,5 +48,3 @@ PS1="\w\[\033[0;32m\]\$(parse_git_branch_and_add_brackets)\[\033[0m\]\$ "
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 [[ -s "$HOME/.local_bash_profile" ]] && source "$HOME/.local_bash_profile"
-
-[[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
