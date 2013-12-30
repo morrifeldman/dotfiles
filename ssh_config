@@ -15,6 +15,7 @@ Host morri-mac
 
 Host amazon
      User ubuntu
+     StrictHostKeyChecking no
      HostName 54.228.211.215
 
 Host raspi

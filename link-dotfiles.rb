@@ -29,7 +29,7 @@ unless File.exists? prelude_dir
   `git clone https://github.com/bbatsov/prelude.git #{prelude_dir}`
 end
 
-dotfiles_map.each do |orig, link|
+def make_a_link(orig, link)
   abs_orig = File.expand_path(orig)
   abs_link = File.expand_path(link)
   if File.symlink?(abs_link)
@@ -42,4 +42,12 @@ dotfiles_map.each do |orig, link|
   end
   puts "Linking " + abs_orig + " to " + abs_link
   File.symlink(abs_orig, abs_link)
+end
+
+dotfiles_map.each do |orig, link|
+  make_a_link(orig, link)
+end
+
+if `uname`.chomp == 'Darwin'
+  make_a_link("org.gnu.emacs.plist","~/Library/LaunchAgents/org.gnu.emacs.plist")
 end
