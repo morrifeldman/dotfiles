@@ -91,7 +91,8 @@
 (zenburn-with-color-variables
   (custom-theme-set-faces
    'zenburn
-   `(isearch ((t (:foreground ,zenburn-yellow-2 :weight bold :background ,zenburn-red-4))))))
+   `(isearch ((t (:foreground ,zenburn-green :weight bold
+                              :background ,zenburn-yellow-2))))))
 
 ;; This doesn't work because emacs server is always without
 ;; window-system ;; Terminal version specific settings (unless
