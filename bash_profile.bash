@@ -30,6 +30,7 @@ alias xmacs="emacsclient -c -n -a ''"
 alias emacs="TERM=xterm-256color emacsclient -t -a ''"
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 alias emacs-pid="emacsclient -e '(emacs-pid)'"
+alias run-igv="reattach-to-user-namespace igv"
 function file-to-clip-function {
     greadlink -f $1 | perl -ne 'chomp and print' | pbcopy
 }
