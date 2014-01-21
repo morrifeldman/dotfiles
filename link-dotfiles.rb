@@ -29,7 +29,7 @@ unless File.exists? prelude_dir
   `git clone https://github.com/bbatsov/prelude.git #{prelude_dir}`
 end
 
-def make_a_link(orig, link)
+def make_a_link(orig, link, backup_dir)
   abs_orig = File.expand_path(orig)
   abs_link = File.expand_path(link)
   if File.symlink?(abs_link)
@@ -45,7 +45,7 @@ def make_a_link(orig, link)
 end
 
 dotfiles_map.each do |orig, link|
-  make_a_link(orig, link)
+  make_a_link(orig, link, backup_dir)
 end
 
 if `uname`.chomp == 'Darwin'
