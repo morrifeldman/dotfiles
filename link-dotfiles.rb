@@ -6,7 +6,6 @@ prelude_dir = File.expand_path("~/prelude")
 dotfiles_map = {
   "bash_profile.bash" => "~/.bash_profile",
   "bashrc.bash" => "~/.bashrc",
-  "local_bash_profile.bash" => "~/.local_bash_profile",
   prelude_dir => "~/.emacs.d",
   "personal.el" => File.join(prelude_dir, "personal/personal.el"),
   "prelude-modules.el" => File.join(prelude_dir, "prelude-modules.el"),
