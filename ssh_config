@@ -21,7 +21,7 @@ Host amazon
 
 Host raspi
      User pi
-     HostName morri.ssh22.net
+     HostName cows.http80.info
 
 Host raspi-local
      User pi

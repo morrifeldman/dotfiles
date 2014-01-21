@@ -6,7 +6,7 @@
     <key>Label</key>
     <string>org.gnu.emacs</string>
     <key>Program</key>
-    <string>/Users/morri/Google Drive/dotfiles/emacs-keep-alive.rb</string>
+    <string>/Users/morri/Google-Drive/dotfiles/emacs-keep-alive.rb</string>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
