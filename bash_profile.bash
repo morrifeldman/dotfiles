@@ -4,7 +4,7 @@
 #export MACHTYPE=x86_64
 [[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
-backed_up_dir=~/Google\ Drive
+backed_up_dir=~/Google-Drive
 export CLICOLOR=true
 export R_HOME=/usr/local/opt/r/R.framework/Resources
 export FIREDIR=$backed_up_dir/src/FIRE-1.1a

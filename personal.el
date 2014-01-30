@@ -104,6 +104,11 @@
 ;; moved past in smartparens, But this is already set in
 ;; prelude-editor and the value doesn't seem to be getting accepted
 ;; (setq sp-autoskip-closing-pair 'always)
-
+(add-hook 'text-mode-hook
+          '(lambda ()
+             (when (not (derived-mode-p 'text-mode))
+               (setq indent-tabs-mode nil)
+               (setq tab-width 2)
+               (setq indent-line-function (quote insert-tab)))))
 (provide 'personal)
 ;;; personal.el ends here
