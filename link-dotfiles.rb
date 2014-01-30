@@ -48,5 +48,5 @@ dotfiles_map.each do |orig, link|
 end
 
 if `uname`.chomp == 'Darwin'
-  make_a_link("org.gnu.emacs.plist","~/Library/LaunchAgents/org.gnu.emacs.plist")
+  make_a_link("org.gnu.emacs.plist","~/Library/LaunchAgents/org.gnu.emacs.plist", backup_dir)
 end
