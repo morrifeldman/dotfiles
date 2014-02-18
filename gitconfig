@@ -5,3 +5,5 @@
 	editor = TERM=xterm-256color emacsclient -t -a ''
 [credential]
 	helper = cache
+[push]
+	default = simple
