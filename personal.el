@@ -104,11 +104,12 @@
 ;; moved past in smartparens, But this is already set in
 ;; prelude-editor and the value doesn't seem to be getting accepted
 ;; (setq sp-autoskip-closing-pair 'always)
-(add-hook 'text-mode-hook
-          '(lambda ()
-             (when (not (derived-mode-p 'text-mode))
-               (setq indent-tabs-mode nil)
-               (setq tab-width 2)
-               (setq indent-line-function (quote insert-tab)))))
+
+;; Trying to disable the dialog box because it is broken in osx emacs
+;; right now 24.3
+(setq use-dialog-box nil)
+
+;; Enable srgb
+(setq ns-use-srgb-colorspace t)
 (provide 'personal)
 ;;; personal.el ends here

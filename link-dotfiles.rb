@@ -47,6 +47,13 @@ dotfiles_map.each do |orig, link|
   make_a_link(orig, link, backup_dir)
 end
 
+user_launch_agents =  "~/Library/LaunchAgents/"
+
+darwin_links = {"org.gnu.emacs.plist" => user_launch_agents + "org.gnu.emacs.plist",
+  "fix-podcast.plist" => user_launch_agents + "fix-podcast.plist"}
+
 if `uname`.chomp == 'Darwin'
-  make_a_link("org.gnu.emacs.plist","~/Library/LaunchAgents/org.gnu.emacs.plist", backup_dir)
+  darwin_links.each do |orig, link|
+    make_a_link(orig, link, backup_dir)
+  end
 end
