@@ -49,8 +49,10 @@ end
 
 user_launch_agents =  "~/Library/LaunchAgents/"
 
-darwin_links = {"org.gnu.emacs.plist" => user_launch_agents + "org.gnu.emacs.plist",
-  "fix-podcast.plist" => user_launch_agents + "fix-podcast.plist"}
+darwin_links = {
+  "org.gnu.emacs.plist" => user_launch_agents + "org.gnu.emacs.plist"
+  #  , "fix-podcast.plist" => user_launch_agents + "fix-podcast.plist"
+}
 
 if `uname`.chomp == 'Darwin'
   darwin_links.each do |orig, link|

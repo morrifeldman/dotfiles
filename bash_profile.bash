@@ -28,13 +28,13 @@ alias safari="open -a Safari"
 #alias xemacs="open -a Emacs"
 alias xmacs="emacsclient -c -n -a ''"
 alias emacs="TERM=xterm-256color emacsclient -t -a ''"
-alias kill-emacs="emacsclient -e '(kill-emacs)'"
+alias kill-emacs="emacsclient -t -e '(server-shutdown)'"
 alias emacs-pid="emacsclient -e '(emacs-pid)'"
 alias run-igv="reattach-to-user-namespace igv"
-function file-to-clip-function {
+function file_to_clip_function {
     greadlink -f $1 | perl -ne 'chomp and print' | pbcopy
 }
-alias file2clip=file-to-clip-function
+alias file2clip=file_to_clip_function
 if hash brew 2>/dev/null
 then
     export PATH=/usr/local/bin:/usr/local/sbin:$PATH # brew wants first bat

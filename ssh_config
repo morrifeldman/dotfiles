@@ -21,8 +21,12 @@ Host amazon
 
 Host raspi
      User pi
-     HostName cows.http80.info
+     HostName cows.craftx.biz
 
 Host raspi-local
      User pi
      HostName 10.0.1.3
+
+Host wexac
+     User morrif
+     HostName access3.wexac.weizmann.ac.il

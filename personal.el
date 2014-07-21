@@ -88,11 +88,16 @@
 ;; Change the cursor to a bar
 (set-default 'cursor-type 'bar)
 
+;; This is now not needed because something like it was merged in to
+;; prelude
+
+;; (zenburn-with-color-variables (custom-theme-set-faces
+;; 'zenburn `(isearch ((t (:foreground ,zenburn-green :weight bold
+;; :background ,zenburn-yellow-2))))))
+
 (zenburn-with-color-variables
   (custom-theme-set-faces
-   'zenburn
-   `(isearch ((t (:foreground ,zenburn-green :weight bold
-                              :background ,zenburn-yellow-2))))))
+   'zenburn `(preview-face ((t (:background, zenburn-bg))))))
 
 ;; This doesn't work because emacs server is always without
 ;; window-system ;; Terminal version specific settings (unless
@@ -105,11 +110,38 @@
 ;; prelude-editor and the value doesn't seem to be getting accepted
 ;; (setq sp-autoskip-closing-pair 'always)
 
-;; Trying to disable the dialog box because it is broken in osx emacs
+;; Disable the dialog box because it is broken in osx emacs
 ;; right now 24.3
 (setq use-dialog-box nil)
 
 ;; Enable srgb
 (setq ns-use-srgb-colorspace t)
+;; define function to shutdown emacs server instance
+(defun server-shutdown ()
+  "Save buffers, Quit, and Shutdown (kill) server"
+  (interactive)
+  (save-some-buffers)
+  (kill-emacs)
+  )
+
+(setq prelude-whitespace nil)
+
+;; This should already be coming from prelude
+;; (require 'tex-site)
+
+;; something like this is already in prelude
+;; (TeX-PDF-mode t)
+
+(setq cider-auto-select-error-buffer nil)
+
+;; (setq cider-popup-stacktraces nil)
+;; (setq cider-repl-popup-stacktraces t)
+
+;; make s-x s-e do cider-eval-print-sexp
+;; This is not so good because s-x is cut!!!!!
+;; (global-unset-key (kbd "s-x"))
+;; (define-key cider-mode-map (kbd "s-x s-e") 'cider-eval-print-last-sexp)
+
+
 (provide 'personal)
 ;;; personal.el ends here
