@@ -4,4 +4,4 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ $TERM == dumb ]] && return
 #[[ -z "$TMUX" ]] && (tmux -2 attach || tmux -2 new-session)
 #echo "Starting TMUX"
-[[ -z "$TMUX" ]] && exec tmux -2
+[[ -z "$TMUX" ]] && [ "type -p tmux" ] && exec tmux -2
