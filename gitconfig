@@ -2,7 +2,7 @@
 	name = Morris Feldman
 	email = morrifeldman@gmail.com
 [core]
-	editor = TERM=xterm-256color emacsclient -t -a ''
+	editor = emacsclient -c -a ''
 [credential]
 	helper = cache
 [push]

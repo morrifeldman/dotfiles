@@ -23,5 +23,6 @@
 ;; (require 'prelude-scheme)
 ;; (require 'prelude-scss)
 ;; (require 'prelude-web)
+;; (require 'prelude-company)
 (require 'prelude-xml)
 (require 'prelude-ido)

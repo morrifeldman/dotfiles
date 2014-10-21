@@ -18,7 +18,7 @@ Affy=$Spin/BigFiles/Affy
 export AFFX_ANALYSIS_FILES_PATH=$Affy/HG-U133A_2:$Affy/HuEx-1_0/library:$Affy/HuEx-1_0/mps_ps:$Affy/HuGene-1_0
 # MatlabRoot=/Applications/MATLAB_R2011a.app
 # export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:$MatlabRoot/bin/maci64/:$MatlabRoot/sys/os/maci64
-export JAVA_TOOL_OPTIONS="-Xms250M -Xmx1G"
+#export JAVA_TOOL_OPTIONS="-Xms250M -Xmx1G"
 export BOWTIE2_INDEXES=$backed_up_dir/bowtie2_indexes
 alias edit="open -a textedit"
 alias xcode="open -a Xcode"
@@ -49,4 +49,17 @@ PS1="\w\[\033[0;32m\]\$(parse_git_branch_and_add_brackets)\[\033[0m\]\$ "
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# Fix bash history
+shopt -s histappend
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export HISTCONTROL=ignoreboth
+export HISTIGNORE='ls:bg:fg:history'
+export HISTTIMEFORMAT='%F %T '
+
+
 [[ -s "$HOME/.local_bash_profile" ]] && source "$HOME/.local_bash_profile"
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi

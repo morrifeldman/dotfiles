@@ -1,14 +1,15 @@
 #! /usr/bin/env ruby
 require 'fileutils'
 
-prelude_dir = File.expand_path("~/prelude")
+#prelude_dir = File.expand_path("~/prelude")
 
 dotfiles_map = {
   "bash_profile.bash" => "~/.bash_profile",
   "bashrc.bash" => "~/.bashrc",
-  prelude_dir => "~/.emacs.d",
-  "personal.el" => File.join(prelude_dir, "personal/personal.el"),
-  "prelude-modules.el" => File.join(prelude_dir, "prelude-modules.el"),
+#  prelude_dir => "~/.emacs.d",
+#  "personal.el" => File.join(prelude_dir, "personal/personal.el"),
+#  "prelude-modules.el" => File.join(prelude_dir, "prelude-modules.el"),
+  "init.el" => "~/.emacs.d/init.el",
   "bin" => "~/bin",
   "rake" => "~/.rake",
   "tmux.conf" => "~/.tmux.conf",
@@ -24,9 +25,9 @@ dirs_to_make.each do |d|
   Dir.mkdir(d) unless File.exists?(d)
 end
 
-unless File.exists? prelude_dir
-  `git clone https://github.com/bbatsov/prelude.git #{prelude_dir}`
-end
+#unless File.exists? prelude_dir
+#  `git clone https://github.com/bbatsov/prelude.git #{prelude_dir}`
+#end
 
 def make_a_link(orig, link, backup_dir)
   abs_orig = File.expand_path(orig)
@@ -47,15 +48,15 @@ dotfiles_map.each do |orig, link|
   make_a_link(orig, link, backup_dir)
 end
 
-user_launch_agents =  "~/Library/LaunchAgents/"
+# user_launch_agents =  "~/Library/LaunchAgents/"
 
-darwin_links = {
-  "org.gnu.emacs.plist" => user_launch_agents + "org.gnu.emacs.plist"
-  #  , "fix-podcast.plist" => user_launch_agents + "fix-podcast.plist"
-}
+# darwin_links = {
+# #  "org.gnu.emacs.plist" => user_launch_agents + "org.gnu.emacs.plist"
+#   #  , "fix-podcast.plist" => user_launch_agents + "fix-podcast.plist"
+# }
 
-if `uname`.chomp == 'Darwin'
-  darwin_links.each do |orig, link|
-    make_a_link(orig, link, backup_dir)
-  end
-end
+# if `uname`.chomp == 'Darwin'
+#   darwin_links.each do |orig, link|
+#     make_a_link(orig, link, backup_dir)
+#   end
+# end
