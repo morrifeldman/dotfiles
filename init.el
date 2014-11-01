@@ -6,7 +6,7 @@
 (require 'cl)
 (defvar my-packages '(clojure-mode cider ido paredit
   rainbow-delimiters ido-vertical-mode markdown-mode
-  zenburn-theme flx-ido auctex)
+  zenburn-theme flx-ido auctex ac-cider git-commit-mode)
   "Canonical list of packages.")
 (defun my-packages-installed-p ()
      (every 'package-installed-p my-packages))
@@ -174,6 +174,13 @@
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+
+(require 'ac-cider)
+(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'cider-mode))
 
 (setq show-paren-delay 0)
 (show-paren-mode 1)

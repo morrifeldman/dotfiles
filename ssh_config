@@ -30,3 +30,7 @@ Host raspi-local
 Host wexac
      User morrif
      HostName access3.wexac.weizmann.ac.il
+
+Host access2
+     User morrif
+     HostName access2.wexac.weizmann.ac.il
